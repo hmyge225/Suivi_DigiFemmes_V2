@@ -1,0 +1,146 @@
+﻿Feature,Statut,Priorité,Deadline,Détails,Projet
+Interface publique React,🔵 En cours,,12 octobre 2026,"Stack : React, Vite, React Router, Tailwind CSS.
+Intégrer les pages publiques prioritaires à partir des maquettes disponibles.
+Mettre en place les routes, le layout principal, la navigation et le pied de page.
+Réutiliser les composants existants plutôt que recréer chaque élément.
+Vérifier l’affichage sur mobile et ordinateur.Livrable : pages principales navigables.Recherches utiles :
+React Router createBrowserRouter nested routes
+Tailwind CSS responsive layout
+React reusable components best practicesValidation : aucune route prioritaire ne mène à une page vide ou à une erreur.",DigiFemmes WebSite
+Finalisation de l’interface et traductions,⚪ Pause,,13 octobre 2026,"Stack : React, i18next, react-i18next, Tailwind CSS.
+Finaliser les pages publiques prévues.
+Centraliser les textes dans des fichiers de traduction français et anglais.
+Ajouter le sélecteur de langue.
+Vérifier les menus, formulaires, messages d’erreur et boutons dans les deux langues.Livrable : interface prioritaire disponible en français et en anglais.Recherches utiles :
+react-i18next useTranslation language switch
+i18next translation JSON namespacesValidation : le changement de langue met à jour les textes sans casser la navigation.",DigiFemmes WebSite
+Création du CMS Directus,⚪ Pause,,14 octobre 2026,"Stack : Directus, PostgreSQL, API REST Directus.
+Créer les collections nécessaires : pages, articles et médias.
+Ajouter les champs de traduction et les informations SEO utiles.
+Configurer les droits de lecture et d’édition.
+Créer des contenus de test pour vérifier le modèle.Livrable : CMS utilisable avec les collections prioritaires.Recherches utiles :
+Directus collections fields relationships
+Directus translations relational data model
+Directus roles permissions public contentValidation : un administrateur peut créer et modifier du contenu depuis Directus.",DigiFemmes WebSite
+Intégration CMS et premier SSO,⚪ Pause,,15 octobre 2026,"Stack : React, API Directus, Laravel, Authentik, OIDC.
+Connecter les pages React aux contenus Directus.
+Vérifier les langues et les médias.
+Créer l’application OIDC dans Authentik.
+Définir les URL de redirection et commencer l’intégration du retour d’authentification dans Laravel.Livrable : contenu dynamique dans React et premier test de connexion SSO.Recherches utiles :
+Directus REST API items filter fields
+Authentik OAuth2 OpenID Connect provider application
+Laravel OpenID Connect client Authorization Code FlowValidation : React affiche un contenu créé dans Directus et le flux SSO atteint le callback Laravel.",DigiFemmes WebSite
+Présentation hebdomadaire,,,16 octobre 2026,"Livrables :
+Interface publique prioritaire intégrée.
+Traductions FR/EN fonctionnelles.
+CMS Directus avec contenus et médias.
+Premier parcours SSO testé.
+Liste des corrections et tâches restantes.",DigiFemmes WebSite
+Finalisation de l’authentification SSO,⚪ Pause,,17 octobre 2026,"Stack : Authentik, OIDC, Laravel, sessions sécurisées.
+Finaliser le callback et l’échange du code OIDC côté serveur.
+Vérifier l’identité reçue et les informations nécessaires.
+Ouvrir la session Laravel.
+Gérer les erreurs de connexion et la déconnexion.
+Tester les cas d’échec et les URL de retour incorrectes.Livrable : connexion et déconnexion SSO fonctionnelles côté backend.Recherches utiles :
+OpenID Connect Authorization Code Flow state nonce
+Laravel session authentication security
+Authentik OIDC redirect URI configurationValidation : un utilisateur peut se connecter puis se déconnecter sans contourner les vérifications serveur.",DigiFemmes WebSite
+Comptes utilisateurs et rôles,⚪ Pause,,18 octobre 2026,"Stack : Laravel, MySQL, middleware et politiques d’autorisation.
+Retrouver ou créer le compte applicatif après une connexion réussie.
+Définir les rôles administrateur, entrepreneur et expert.
+Associer les permissions aux fonctions métier.
+Protéger les API Laravel et préparer les écrans privés React.Livrable : comptes applicatifs et premières permissions opérationnels.Recherches utiles :
+Laravel authorization policies middleware
+Laravel Eloquent updateOrCreate user
+Laravel API authentication session SPAValidation : l’identité fournie par Authentik ne donne pas automatiquement des droits administrateur ; les droits sont contrôlés par Laravel.",DigiFemmes WebSite
+Finalisation des rôles et accès,⚪ Pause,,19 octobre 2026,"Stack : Laravel, MySQL, React Router.
+Finaliser les rôles et permissions.
+Protéger les routes privées côté React et les API côté Laravel.
+Gérer les utilisateurs inactifs ou sans rôle valide.
+Tester les accès autorisés et interdits.Livrable : SSO, session applicative et permissions intégrés.Recherches utiles :
+Laravel policies authorization testing
+React Router protected routes
+OWASP Broken Access Control APIValidation : masquer un bouton dans React ne suffit pas : l’API refuse aussi une action non autorisée.",DigiFemmes WebSite
+Test de littératie — questionnaire,⚪ Pause,,20 octobre 2026,"Stack : React, Laravel, MySQL, validation des données.
+Créer ou importer les questions et choix de réponses.
+Afficher le questionnaire et permettre la navigation entre les questions.
+Enregistrer les réponses dans MySQL.
+Gérer les champs obligatoires et les réponses incomplètes.Livrable : questionnaire de littératie parcourable et réponses enregistrées.Recherches utiles :
+React controlled form inputs
+Laravel Form Request validation
+Laravel database transactionsValidation : les réponses enregistrées correspondent exactement aux choix de l’utilisateur.",DigiFemmes WebSite
+Test de littératie — score et rapport,⚪ Pause,,21 octobre 2026,"Stack : Laravel, MySQL, React.
+Implémenter le calcul du score selon le barème validé.
+Enregistrer le résultat et les informations utiles à son explication.
+Générer les recommandations définies pour le test.
+Afficher le rapport et gérer la reprise ou la consultation d’une tentative.Livrable : test de littératie complet, du questionnaire au rapport.Recherches utiles :
+Laravel service class business logic
+PHPUnit test score calculation
+Laravel API resource responseValidation : des réponses connues produisent un score attendu et reproductible.",DigiFemmes WebSite
+Test de maturité numérique,⚪ Pause,,22 octobre 2026,"Stack : React, Laravel, MySQL.
+Construire le questionnaire par dimensions.
+Appliquer les règles de calcul convenues.
+Calculer le niveau global et les résultats par dimension.
+Générer les recommandations et afficher le rapport.Livrable : test de maturité complet avec résultat détaillé.Recherches utiles :
+Laravel assessment scoring service
+Laravel Eloquent relationships assessment answers
+React questionnaire wizard formValidation : les calculs et les recommandations correspondent aux règles métier validées.",DigiFemmes WebSite
+Présentation des fonctionnalités métier,,,23 octobre 2026,"Livrables :
+Authentik et OIDC intégrés à Laravel.
+Gestion des utilisateurs, rôles et permissions.
+Test de littératie avec score et rapport.
+Test de maturité avec résultats par dimension et recommandations.
+CMS intégré et contenus FR/EN.
+Liste des anomalies restantes.",DigiFemmes WebSite
+Fiabilisation des évaluations,⚪ Pause,,24 octobre 2026,"Gérer les interruptions, doublons et questionnaires incomplets.
+Empêcher la modification non autorisée des réponses après soumission.
+Tester les calculs avec plusieurs jeux de données.
+Corriger les anomalies de la démonstration.Livrable : évaluations plus robustes et résultats vérifiés.Recherches utiles :
+Laravel idempotency form submission
+Laravel database transaction testing
+OWASP IDOR assessment result APIValidation : un visiteur ne peut pas consulter le rapport d’une autre personne en modifiant simplement un identifiant ou un token.",DigiFemmes WebSite
+Finalisation du CMS et parcours complets,⚪ Pause,,25 octobre 2026,"Vérifier les traductions et les médias.
+Tester les contenus publiés et non publiés selon les droits.
+Tester les parcours visiteur, entrepreneur, expert et administrateur.
+Corriger les erreurs prioritaires du frontend et des API.Livrable : CMS et principaux parcours applicatifs vérifiés.Recherches utiles :
+Directus published status API filter
+Playwright test user roles
+Laravel API feature testsValidation : les contenus et fonctionnalités visibles correspondent aux droits prévus.",DigiFemmes WebSite
+Tableau de bord métier,⚪ Pause,,26 octobre 2026,"Stack : Laravel, MySQL, React, Recharts si nécessaire.
+Créer les API de statistiques.
+Afficher le nombre de tentatives, les résultats et les indicateurs convenus.
+Ajouter les filtres prioritaires, par exemple la période.
+Limiter les données affichées selon les permissions.Livrable : tableau de bord alimenté par les données métier.Recherches utiles :
+Laravel aggregate count groupBy date
+Recharts responsive bar chart
+Laravel API pagination filteringValidation : les indicateurs affichés correspondent aux données réellement enregistrées.",DigiFemmes WebSite
+Google Analytics et journaux d’activité,⚪ Pause,,27 octobre 2026,"Stack : GA4, Laravel, MySQL et événements Directus selon les besoins.
+Configurer GA4 et les événements de fréquentation nécessaires.
+Enregistrer les actions sensibles dans les journaux métier Laravel.
+Tracer les changements importants : auteur, action, date et objet concerné.
+Récupérer les événements Directus utiles, puis définir comment les consulter ensemble.Livrable : statistiques de fréquentation et journaux d’activité opérationnels.Recherches utiles :
+Google Analytics 4 events React SPA
+Laravel audit log model changes
+Directus webhooks eventsValidation : les événements utiles sont traçables sans transmettre les réponses aux tests ni les données personnelles sensibles à GA4.",DigiFemmes WebSite
+Tests de sécurité et corrections,⚪ Pause,,28 octobre 2026,"Stack : PHPUnit ou Pest, Vitest, Playwright, HTTPS.
+Tester l’authentification et les permissions.
+Vérifier les accès aux rapports et aux API.
+Tester les formulaires, erreurs et principaux parcours.
+Vérifier les variables d’environnement et les informations secrètes.
+Corriger les anomalies bloquantes.Livrable : tests exécutés et anomalies critiques corrigées.Recherches utiles :
+Laravel authorization feature tests
+Playwright authentication end-to-end
+OWASP API Security Top 10Validation : aucune faille bloquante connue ne subsiste dans les parcours testés.",DigiFemmes WebSite
+Déploiement et documentation,⚪ Pause,,29 octobre 2026,"Stack : environnement serveur retenu, HTTPS, variables d’environnement et sauvegardes.
+Déployer React, Laravel et Directus selon l’infrastructure prévue.
+Configurer les connexions MySQL et PostgreSQL.
+Vérifier les URL de redirection Authentik en environnement déployé.
+Vérifier les migrations, sauvegardes et accès.
+Rédiger les instructions d’installation et d’utilisation.Livrable : version déployée et documentation initiale.Recherches utiles :
+Laravel production deployment environment variables
+Authentik OIDC production redirect URI
+Directus production deployment PostgreSQLValidation : le parcours complet fonctionne sur l’environnement de démonstration, pas seulement en local.",DigiFemmes WebSite
+Validation et présentation finale,,,30 octobre 2026,"Parcourir l’application de la page publique au tableau de bord.
+Démontrer le SSO, les rôles, les évaluations et le CMS.
+Vérifier les statistiques, GA4 et journaux d’activité.
+Présenter les résultats des tests, la documentation et les éventuelles limites.Livrable final : version déployée et démontrable, bilan de validation et documentation.Validation : chaque fonctionnalité obligatoire dispose d’un résultat de test ou d’une limite explicitement documentée.",DigiFemmes WebSite
